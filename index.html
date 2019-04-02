@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
+  <!-- <link rel="stylesheet" href="./assets/css/reset.css" /> -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Oddball Trivia</title>
+</head>
+<div class="main mt-5">
+  <h1>Welcome to Oddball Trivia</h1>
+
+  <div id="timer">
+    <span>
+      <h3>Good Luck!<span id="time-here"></span></h3>
+      <span id="time-here"></span>
+    </span>
+  </div>
+  <div id="empty-question">
+    <h3>empty questions will go in here</h3>
+  </div>
+  <div class="" id="answer-box">
+    <div class="answer" id="answer-a">
+      <!-- <h4>answer A</h4> -->
+    </div>
+    <div class="answer" id="answer-b">
+      <!-- <h4>answer B</h4> -->
+    </div>
+    <div class="answer" id="answer-c">
+      <!-- <h4>answer C</h4> -->
+    </div>
+    <div class="answer" id="answer-d">
+      <!-- <h4>answer D</h4> -->
+    </div>
+  </div>
+  <div class="" id="correct-answer">
+
+  </div>
+  <div class="" id="empty-image">
+
+  </div>
+</div>
+<!-- <script>
+  //  Interval Demonstration
+  //  Set our number counter to 100.
+  var number = 100;
+
+  //  Variable that will hold our interval ID when we execute
+  //  the "run" function
+  var intervalId;
+
+  //  When the stop button gets clicked, run the stop function.
+  // $("#stop").on("click", stop);
+
+  // //  When the resume button gets clicked, execute the run function.
+  // $("#resume").on("click", run);
+
+  //  The run function sets an interval
+  //  that runs the decrement function once a second.
+  //  *****BUG FIX******** 
+  //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
+  function run() {
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+  }
+
+  //  The decrement function.
+  function decrement() {
+
+    //  Decrease number by one.
+    number--;
+
+    //  Show the number in the #show-number tag.
+    $("#timer").html(number ");
+
+
+      //  Once number hits zero...
+      if (number === 0) {
+
+        //  ...run the stop function.
+        stop();
+
+        //  Alert the user that time is up.
+        alert("Time Up!");
+      }
+    }
+</script> -->
+
+<body>
+  <script src="./assets/javascript/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
