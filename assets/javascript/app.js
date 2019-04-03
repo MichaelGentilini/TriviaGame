@@ -1,4 +1,3 @@
-// $(document).ready(function () {
 // Set variables for questions with answers, track correct and incorrect answers, as well as the timer
 var trivia = [{
     question: "What nationality was Cleopatra, Queen of Egypt?",
@@ -76,9 +75,11 @@ var trivia = [{
 var right = 0;
 var wrong = 0;
 var unanswered = 0;
-var timer = 6;
+var timer = 4;
 // var questionNumber = 0;
 // isClicked = false;
+
+// $(document).ready(function () {
 
 function reset() {
   var timer = 11;
@@ -87,7 +88,7 @@ function reset() {
 // alert("you got " + score + " out of " + trivia.length);
 // //  Variable that will hold our interval ID when we execute
 //  the "run" function
-var intervalId;
+var interval;
 
 //  When the stop button gets clicked, run the stop function.
 // $("#stop").on("click", stop);
@@ -98,33 +99,36 @@ var intervalId;
 //  The run function sets an interval
 //  that runs the decrement function once a second.
 //  *****BUG FIX********
-//  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
+//  Clearing the interval prior to setting our new interval will not allow multiple instances.
 function run() {
-  clearInterval(intervalId);
-  intervalId = setInterval(decrement, 1000);
+  clearInterval(interval);
+  interval = setInterval(decrement, 1000);
 }
 
-
-function question() {
-
-}
+function question() {}
 //  The decrement function.
 function decrement() {
-
   //  Decrease number by one.
   timer--;
 
   for (var j = 0; j < trivia.length; j++) {
+
+    console.log(trivia[j].question);
     // show timer on screen
-    $("#timer").html("<h3> You have " + timer + " seconds left</h3>");
+    // $("#timer").html("<h3> You have " + timer + " seconds left</h3>");
 
-    // display question and possible answers
-    $("#empty-question").html("<h3>" + trivia[j].question + " </h3>");
+    // // display question and possible answers
+    // $("#empty-question").html("<h3>" + trivia[j].question + " </h3>");
 
-    $("#answer-a").html("<h4>" + trivia[j].answerA + "</h4>");
-    $("#answer-b").html("<h4>" + trivia[j].answerB + "</h4>");
-    $("#answer-c").html("<h4>" + trivia[j].answerC + "</h4>");
-    $("#answer-d").html("<h4>" + trivia[j].answerD + "</h4>");
+    // $("#answer-a").html("<button>" + trivia[j].answerA + "</button>");
+    // $("#answer-b").html("<button>" + trivia[j].answerB + "</button>");
+    // $("#answer-c").html("<button>" + trivia[j].answerC + "</button>");
+    // $("#answer-d").html("<button>" + trivia[j].answerD + "</button>");
+
+    // $("#answer-box > div > button").click(function () {
+    //   console.log('you answered: + trivia.answer');
+    //   // console.log(this.text);
+    // });
 
     //  Once number hits zero...
 
@@ -132,25 +136,24 @@ function decrement() {
       //  ...run the stop function.
       stop();
       //  Alert the user that time is up.
-      $("#correct-answer").html("<h2>" +
-        ("The answer is: " + trivia[j].correctAnswer) + " </h2>");
-      $("#empty-image").html("<img src=" + trivia[j].image + " width='50%'>");
+      $("#correct-answer").html(
+        "<h4>" + ("The answer is: " + trivia[j].correctAnswer) + " </h4>"
+      );
+      $("#empty-image").html("<img src=" + trivia[j].image + " width='30%'>");
       // alert("Time Up!");
       reset();
-
-
     }
   }
 }
 
-
 //  The stop function
 function stop() {
-  //  Clears our intervalId
+  //  Clears our interval
   //  We just pass the name of the interval
   //  to the clearInterval function.
-  clearInterval(intervalId);
+  clearInterval(interval);
 }
 
 //  Execute the run function.
 run();
+// });

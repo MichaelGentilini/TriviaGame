@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>jQuery Event Handlers</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary">
+          Hi, click me. Thanks.
+        </button>
+        <p></p>
+        <div id="button-container"></div>
+        <button class="btn btn-danger">Danger Danger</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      // DOM is Ready!
+      console.log('READY!');
+
+      // "cached" jQuery selectors
+      // by storing these in variables, we are saving additional trips
+      // for javascript to make future selections
+      var $primaryBtn = $('.btn-primary');
+
+      // Dynamic "delegate" event handler.
+      // This will attach event handler to all current elements in 'body'
+      // that have the inner selector
+      // AS WELL AS all added elements in the future that match the selectors
+
+      // OUTER SELECTOR     INNER SELECTOR
+      $('body').on('click', '.btn-secondary', clickHandler);
+
+      // Single button click event handler
+      $primaryBtn.on('click', function () {
+        console.log('Hi you clicked the primary button');
+      });
+
+      // Create new buttons with data attributes for value
+      for (var i = 1; i <= 4; i++) {
+        // create new button, add css classes
+        var newBtn = $('<button>').addClass('btn btn-secondary');
+
+        // set button text
+        newBtn.text('Button ' + i);
+
+        // give button data value
+        newBtn.attr('data-value', i);
+
+        // append new button to container
+        $buttonContainer.append(newBtn);
+
+        // add paragraph tag at end
+        $buttonContainer.append($('<p>'));
+      }
+    });
+
+    // Separate click event handler function we can use in our attachments
+    function clickHandler() {
+      var btnVal = $(this).data('value');
+      console.log(btnVal);
+    }
+  </script>
+</body>
+
+</html>

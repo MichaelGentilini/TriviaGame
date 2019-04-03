@@ -11,39 +11,88 @@ body {
   margin: auto;
   text-align: center;
   padding: 20px;
-  width: 90%;
+  width: 80%;
+  border-radius: 10%;
+  height: 80vh;
 }
 
 #empty-question {
-  background-color: lightgoldenrodyellow;
+  /* background-color: rgb(73, 127, 189); */
+  background: #fff;
   margin: auto;
-  width: 70%;
+  width: 90%;
+  height: 70%;
+  text-align: center;
 }
 
-/* h1,
-h2,
-h3,
-h4 {
-  text-align: center;
+.btn-info {
+  color: white;
+  padding: 20px 80px;
+  margin-top: 30px;
+  border-radius: 25%;
+}
+
+.btn-warning {
+  color: white;
+  padding: 20px 80px;
+  margin-top: 10px;
+  min-width: 70%;
+  font-weight: 500;
+}
+
+.btn-warning:hover {
+  background: yellow;
+}
+
+.timer {
+  font-size: 25px;
+}
+
+/* 
+ button {
+  background: none;
+  font-size: 25px;
+  border: none;
 } */
+
+
+/* button:hover {
+  margin: 0.1em;
+  background: rgb(73, 127, 189);
+  color: white; */
+
+li {
+  list-style: none;
+  background: #fff;
+  padding: 0 180px 0 50px;
+  margin-left: -70px;
+  border: solid;
+  font-size: 25px;
+}
 
 h2 {
   font-size: 50px;
 }
 
-
 /* h4:hover {
   font-size: .8em;
 } */
+
+.timer {
+  padding: 40px;
+  color: red;
+  background: #fff;
+  width: 50%;
+  margin: auto;
+}
 
 #answer-box {
   background-color: lightgoldenrodyellow;
   margin: auto;
   font-size: 40px;
   width: 30%;
-  padding: .1em;
+  padding: 0.1em;
 }
-
 
 /* .answer:hover {
   background-color: lightgoldenrodyellow;
@@ -55,11 +104,11 @@ h2 {
   color: red;
   font-weight: bolder;
   font-size: 40px;
-
 }
 
-#empty-question {
-  background: rgba(135, 205, 40, 0.877);
-  text-align: center;
-  padding: 30px;
+#start {
+  position: flex;
+  padding: 20px 200px;
+  align-items: middle;
+  /* visibility: hidden; */
 }
