@@ -104,7 +104,7 @@ $('document').ready(function () {
 
   // start();
 
-  // *After pushing the start button, a question with 4 possible answers populates the screen with a 15-30 second timer
+  // *After pushing the start button, a question with 4 possible answers populates the screen with a 10-20 second timer
 
   var newQuestion = function () {
 
@@ -117,16 +117,13 @@ $('document').ready(function () {
     for (let index = 1; index <= 4; index++) {
       // var questionBox = $('<div>').addClass('questions');
       var newDiv = $('<div>').addClass('questions');
-      var newBtn1 = $('<button>').addClass('btn btn-warning btn-lg').attr('value', trivia[questionCount].answer1);
+      var newBtn = $('<button>').addClass('btn btn-warning btn-lg').attr('value', trivia[questionCount].answer1);
       // id = index;
-      newBtn1.text("this is button " + index);
-      var newBtn2 = $('<button>').addClass('btn btn-warning btn-lg').attr('value', trivia[questionCount].answer2);
-      // id = index;
-      newBtn2.text("this is button " + index);
+      newBtn.text("this is button " + index);
 
       // ?  how can I make .answer dynamically to match the index?
       // newBtn.text("trivia" + [questionCount] + (".answer" + index));
-      newDiv.append(newBtn1, newBtn2);
+      newDiv.append(newBtn);
       newDiv.appendTo('#empty-question');
     }
   }

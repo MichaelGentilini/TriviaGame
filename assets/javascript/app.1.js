@@ -101,17 +101,19 @@ $('document').ready(function () {
     startBtn.appendTo('#empty-question');
   }
   // ! here is the intro screen
-  intro();
+  // intro();
 
   // *After pushing the start button, a question with 4 possible answers populates the screen with a 15-30 second timer
 
   var newQuestion = function () {
-    var displayTimer = $('<div>').addClass('timer');
-    displayTimer.text("You have " + timer + " seconds");
+    var displayTimer = $('<div>').addClass('timer mt-5');
+    displayTimer.text("You have " + "<span id=timer>" + timer + "</span>" + "  seconds ");
     displayTimer.appendTo('#empty-question');
     // var questionBox = $('<div>').addClass('questions');
     var newDiv = $('<div>').addClass('questions');
 
+    var userQuestion = $('<div>').addClass('userQuestion')
+    userQuestion.text(trivia[questionCount].question);
     // add each button with value and text matching possible answers
     var newBtn = $('<button>').addClass('btn btn-warning btn-lg').attr('value', trivia[questionCount].answer1);
     newBtn.text(trivia[questionCount].answer1);
@@ -125,11 +127,30 @@ $('document').ready(function () {
     var newBtn4 = $('<button>').addClass('btn btn-warning btn-lg').attr('value', trivia[questionCount].answer4);
     newBtn4.text(trivia[questionCount].answer4);
 
-    newDiv.append(newBtn, newBtn2, newBtn3, newBtn4);
+    newDiv.append(userQuestion, newBtn, newBtn2, newBtn3, newBtn4);
     newDiv.appendTo('#empty-question');
+
+    var answer = trivia[questionCount].correctAnswer;
+    console.log("The answer is " + answer);
+
+    $(".btn-warning").click(function (event) {
+      var myAnswer = ($(this).prop("value"));
+      isAnswered = true;
+
+      if (answer == myAnswer) {
+        console.log("winner winner");
+        newDiv.empty
+        // answered();
+      } else {
+        console.log("not this time");
+        // answered();
+      }
+    });
   }
+
+
   // ! here is the question screen
-  // newQuestion();
+  newQuestion();
 
   var answered = function () {
 

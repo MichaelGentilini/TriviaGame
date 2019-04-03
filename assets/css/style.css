@@ -44,10 +44,6 @@ body {
   background: yellow;
 }
 
-.timer {
-  font-size: 25px;
-}
-
 /* 
  button {
   background: none;
@@ -61,48 +57,47 @@ body {
   background: rgb(73, 127, 189);
   color: white; */
 
-li {
-  list-style: none;
-  background: #fff;
-  padding: 0 180px 0 50px;
-  margin-left: -70px;
-  border: solid;
-  font-size: 25px;
-}
-
 h2 {
-  font-size: 50px;
+  font-size: 40px;
 }
 
-/* h4:hover {
+h4:hover {
   font-size: .8em;
-} */
+}
+
+.userQuestion {
+  background: rgb(73, 127, 189);
+  color: white;
+  max-width: 70%;
+  margin: auto;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
 
 .timer {
-  padding: 40px;
+  padding: 10px;
+  font-size: 20px;
   color: red;
   background: #fff;
   width: 50%;
   margin: auto;
+  font-weight: 400;
 }
 
-#answer-box {
-  background-color: lightgoldenrodyellow;
-  margin: auto;
-  font-size: 40px;
-  width: 30%;
-  padding: 0.1em;
-}
+.timer {
 
-/* .answer:hover {
-  background-color: lightgoldenrodyellow;
-  border: rgba(135, 226, 31, 0.877) solid 2px;
-} */
+  /* color: red; */
+
+
+}
 
 #timer {
   margin-top: 40px;
-  color: red;
-  font-weight: bolder;
+  /* color: red; */
+  font-weight: 800;
   font-size: 40px;
 }
 
