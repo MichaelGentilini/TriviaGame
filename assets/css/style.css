@@ -1,5 +1,9 @@
+/* *General Setup* */
+
 body {
-  background: url(/assets/images/strange-background3.jpg) no-repeat center center fixed;
+  background: rgb(218, 218, 218);
+  background-image: url("../images/strange-background3.jpg");
+  no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -7,62 +11,85 @@ body {
 }
 
 .main {
-  background: lightgoldenrodyellow;
+  background: lightblue;
   margin: auto;
   text-align: center;
-  padding: 20px;
-  width: 80%;
+  padding: 50px 0;
+  width: 70%;
   border-radius: 10%;
-  height: 80vh;
+  height: 100%;
 }
+
+h1 {
+  font-size: 50px;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: italic;
+  padding-bottom: 20px;
+}
+
+h1::first-letter {
+  color: red;
+
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+  padding: 10px;
+}
+
+/* *Starting HTML page* */
 
 #empty-question {
   /* background-color: rgb(73, 127, 189); */
   background: #fff;
   margin: auto;
   width: 90%;
-  height: 70%;
+  height: 100%;
   text-align: center;
+  padding: 50px 0;
+}
+
+
+/* *Intro Page* */
+
+#welcome-img {
+  width: 50%;
 }
 
 .btn-info {
-  color: white;
   padding: 20px 80px;
-  margin-top: 30px;
+  display: block;
+  margin: auto;
+  margin-top: 40px;
   border-radius: 25%;
+  font-size: 25px;
+  font-weight: 600;
 }
 
-.btn-warning {
-  color: white;
-  padding: 20px 80px;
-  margin-top: 10px;
-  min-width: 70%;
+/* *Question Page* */
+
+.timer {
+  padding: 10px;
+  font-size: 25px;
+  color: red;
+  background: #fff;
+  width: 50%;
+  margin: auto;
   font-weight: 500;
 }
 
-.btn-warning:hover {
-  background: yellow;
-}
-
-/* 
- button {
-  background: none;
-  font-size: 25px;
-  border: none;
-} */
-
-
-/* button:hover {
-  margin: 0.1em;
-  background: rgb(73, 127, 189);
-  color: white; */
-
-h2 {
-  font-size: 40px;
-}
-
-h4:hover {
-  font-size: .8em;
+#timer {
+  color: blue;
+  font-weight: 600;
+  font-size: 30px;
+  padding: 0 0.3em;
+  /* border: solid red; */
+  border-radius: 85%;
+  background: rgb(53, 197, 60);
 }
 
 .userQuestion {
@@ -75,35 +102,59 @@ h4:hover {
   font-weight: 600;
 }
 
-
-
-.timer {
-  padding: 10px;
-  font-size: 20px;
-  color: red;
-  background: #fff;
-  width: 50%;
-  margin: auto;
-  font-weight: 400;
+.btn-warning {
+  color: white;
+  padding: 20px 80px;
+  margin-top: 5px;
+  min-width: 70%;
+  font-weight: 500;
+  background-color: rgb(53, 197, 60);
+  box-shadow: 1em;
 }
 
-.timer {
-
-  /* color: red; */
-
-
-}
-
-#timer {
-  margin-top: 40px;
-  /* color: red; */
-  font-weight: 800;
+/* *Answer Page* */
+.answers {
+  padding: 40px;
+  margin-bottom: 50px;
   font-size: 40px;
+  color: red;
 }
 
-#start {
-  position: flex;
-  padding: 20px 200px;
-  align-items: middle;
-  /* visibility: hidden; */
+.answer-img {
+  padding-top: 25px;
+  margin: auto;
+}
+
+/* *Final Page* */
+
+.wins,
+.losses,
+.unanswered {
+  margin-top: 5px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.wins {
+  color: green;
+}
+
+.losses {
+  color: red;
+}
+
+.unanswered {
+  color: blue;
+}
+
+.btn-end {
+  color: white;
+  padding: 20px 80px;
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 25%;
+  font-size: 25px;
+  font-weight: 600;
+  background-color: rgb(53, 197, 60);
 }
