@@ -14,6 +14,8 @@ In this game, question, answers and images  are set up in an object.
 
 - using JQuery to dynamically generate screens and elements
 - JavaScript Timing Events including (setTimeout & setInterval)
+- using app.2.js is DRYer
+
 
 ## Trivia Game can be found @: ##
 
